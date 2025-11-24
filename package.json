@@ -57,7 +57,7 @@
     "cli-table3": "0.6.0",
     "colors": "1.4.0",
     "cosmiconfig": "7.0.1",
-    "cross-spawn": "7.0.3",
+    "cross-spawn": "7.0.6",
     "ejs": "3.1.10",
     "enquirer": "2.3.6",
     "execa": "5.1.1",
@@ -105,7 +105,8 @@
     "unique-temp-dir": "1.0.0"
   },
   "resolutions": {
-    "semver": ">=6.3.1"
+    "semver": ">=6.3.1",
+    "cross-spawn": "^7.0.6"
   },
   "jest": {
     "testEnvironment": "node",
