@@ -59,25 +59,28 @@ const NewCommand: GluegunCommand = {
       }
     }
 
-    // typescript or javascript?
-    if (props.language === 'ask') {
-      info(``)
-      const { answer } = await prompt.ask({
-        type: 'select',
-        name: 'answer',
-        message: 'Which language would you like to use?',
-        choices: [
-          'TypeScript - Gives you a build pipeline out of the box (default)',
-          'Modern JavaScript - Node 8.2+ and ES2016+ (https://node.green/)',
-        ],
-      })
+    // // typescript or javascript?
+    // if (props.language === 'ask') {
+    //   info(``)
+    //   const { answer } = await prompt.ask({
+    //     type: 'select',
+    //     name: 'answer',
+    //     message: 'Which language would you like to use?',
+    //     choices: [
+    //       'TypeScript - Gives you a build pipeline out of the box (default)',
+    //       'Modern JavaScript - Node 8.2+ and ES2016+ (https://node.green/)',
+    //     ],
+    //   })
+    //
+    //   // we default to TypeScript if they just press "enter"
+    //   const lang = (answer && answer.toLowerCase()) || 'typescript'
+    //
+    //   props.language = lang.includes('typescript') ? 'typescript' : 'javascript'
+    //   info(`Language used: ${props.language === 'typescript' ? 'TypeScript' : 'Modern JavaScript'}`)
+    // }
 
-      // we default to TypeScript if they just press "enter"
-      const lang = (answer && answer.toLowerCase()) || 'typescript'
-
-      props.language = lang.includes('typescript') ? 'typescript' : 'javascript'
-      info(`Language used: ${props.language === 'typescript' ? 'TypeScript' : 'Modern JavaScript'}`)
-    }
+    // NOTE use ts as default
+    props.language = 'typescript'
 
     props.extension = props.language === 'typescript' ? 'ts' : 'js'
 
