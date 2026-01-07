@@ -88,8 +88,8 @@ test('name must pass regex', async () => {
 
 test('generates properly', async () => {
   const name = 'foo'
-  const language = 'javascript'
-  const extension = 'js'
+  const language = 'typescript'
+  const extension = 'ts'
   const toolbox = createFakeToolbox()
   toolbox.parameters.first = name
   toolbox.parameters.options.javascript = true
@@ -117,14 +117,14 @@ test('generates properly', async () => {
   })
 
   const DEFAULT_FILES = [
-    ['__tests__/cli-integration.test.js.ejs', '__tests__/cli-integration.test.js'],
+    ['__tests__/cli-integration.test.js.ejs', '__tests__/cli-integration.test.ts'],
     ['docs/commands.md.ejs', 'docs/commands.md'],
     ['docs/plugins.md.ejs', 'docs/plugins.md'],
-    ['src/commands/generate.js.ejs', 'src/commands/generate.js'],
-    ['src/commands/default.js.ejs', 'src/commands/default.js'],
-    ['src/extensions/cli-extension.js.ejs', 'src/extensions/cli-extension.js'],
-    ['src/templates/model.js.ejs.ejs', 'src/templates/model.js.ejs'],
-    ['src/cli.js.ejs', 'src/cli.js'],
+    ['src/commands/generate.js.ejs', 'src/commands/generate.ts'],
+    ['src/commands/default.js.ejs', 'src/commands/default.ts'],
+    ['src/extensions/cli-extension.js.ejs', 'src/extensions/cli-extension.ts'],
+    ['src/templates/model.js.ejs.ejs', 'src/templates/model.ts.ejs'],
+    ['src/cli.js.ejs', 'src/cli.ts'],
     ['LICENSE.ejs', 'LICENSE'],
     ['package.json.ejs', 'package.json'],
     ['readme.md.ejs', 'readme.md'],

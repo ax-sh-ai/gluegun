@@ -4,6 +4,7 @@ import * as uniqueTempDir from 'unique-temp-dir'
 import * as path from 'path'
 
 import { run as cli } from './cli'
+const { vi } = require('vitest')
 
 const stripANSI = require('strip-ansi')
 
@@ -11,6 +12,7 @@ sinon.stub(console, 'log')
 
 const pwd = process.cwd()
 
+vi.setTimeout(20 * 60 * 1000)
 jest.setTimeout(20 * 60 * 1000)
 
 test('can start the cli', async () => {
