@@ -145,7 +145,7 @@ test('generates properly', async () => {
 
   // test package installation
   expect((spawn as sinon.SinonStub).firstCall.args).toEqual([
-    `cd ${props.name} && npm install --silent && npm run --quiet format`,
+    `cd ${props.name} && pnpm install --silent && pnpm run --quiet format`,
     { shell: true, stdio: 'inherit' },
   ])
 
@@ -211,7 +211,7 @@ test('generates with typescript', async () => {
 
   // test package installation
   expect((spawn as sinon.SinonStub).firstCall.args).toEqual([
-    `cd ${props.name} && npm install --silent && npm run --quiet format`,
+    `cd ${props.name} && pnpm install --silent && pnpm run --quiet format`,
     { shell: true, stdio: 'inherit' },
   ])
 

@@ -146,8 +146,8 @@ const NewCommand: GluegunCommand = {
     filesystem.rename(`${props.name}/src/commands/default.${ext}`, `${props.name}.${ext}`)
 
     // install with yarn or npm i
-    const yarnOrNpm = system.which('yarn') ? 'yarn' : 'npm'
-    await system.spawn(`cd ${props.name} && ${yarnOrNpm} install --silent && ${yarnOrNpm} run --quiet format`, {
+    const bunOrPnpm = system.which('bun') ? 'bun' : 'pnpm'
+    await system.spawn(`cd ${props.name} && ${bunOrPnpm} install --silent && ${bunOrPnpm} run --quiet format`, {
       shell: true,
       stdio: 'inherit',
     })
@@ -159,8 +159,8 @@ const NewCommand: GluegunCommand = {
     info(``)
     info(`Next:`)
     info(`  $ cd ${props.name}`)
-    info(`  $ ${yarnOrNpm} test`)
-    info(`  $ ${yarnOrNpm} link`)
+    info(`  $ ${bunOrPnpm} test`)
+    info(`  $ ${bunOrPnpm} link`)
     info(`  $ ${props.name}`)
     info(``)
     if (props.language === 'typescript') {
@@ -168,7 +168,7 @@ const NewCommand: GluegunCommand = {
       info(colors.gray(`When you link and run the project, it will use ts-node locally to test.`))
       info(colors.gray(`However, you can test the generated JavaScript locally like this:`))
       info(``)
-      info(`  $ ${yarnOrNpm} build`)
+      info(`  $ ${bunOrPnpm} build`)
       info(`  $ ${props.name} --compiled-build`)
       info(``)
     }
