@@ -2,7 +2,7 @@ export interface GluegunSystem {
   /**
    * Executes a command via execa.
    */
-  exec(command: string, options?: any): Promise<any>
+  exec(command: string, options?: any): Promise<import('execa').Result>
   /**
    * Runs a command and returns stdout as a trimmed string.
    */
