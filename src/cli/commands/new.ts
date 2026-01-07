@@ -81,7 +81,6 @@ const NewCommand: GluegunCommand = {
 
     // NOTE use ts as default
     props.language = 'typescript'
-
     props.extension = props.language === 'typescript' ? 'ts' : 'js'
 
     // create the directory
@@ -93,6 +92,7 @@ const NewCommand: GluegunCommand = {
     // executable is treated specially
     active.push(
       generate({
+        // used tsx for speed
         template: `cli/bin/cli-executable.ejs`,
         target: `./${props.name}/bin/${props.name}`,
         props,

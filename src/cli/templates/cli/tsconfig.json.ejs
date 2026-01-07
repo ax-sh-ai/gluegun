@@ -1,8 +1,8 @@
 {
   "compilerOptions": {
-    "allowSyntheticDefaultImports": false,
+    "allowSyntheticDefaultImports": true,
     "experimentalDecorators": true,
-    "lib": ["es2015", "scripthost", "es2015.promise", "es2015.generator", "es2015.iterable", "dom"],
+    "lib": ["es2022", "scripthost", "dom"],
     "module": "commonjs",
     "moduleResolution": "node",
     "noImplicitAny": false,
@@ -12,9 +12,10 @@
     "inlineSourceMap": true,
     "outDir": "build",
     "strict": false,
-    "target": "es5",
+    "target": "esnext",
     "declaration": true,
     "declarationDir": "build/types",
+    "types": ["vitest/globals"]
   },
   "include": ["src/**/*"],
   "exclude": ["node_modules"]
